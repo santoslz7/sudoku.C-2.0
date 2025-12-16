@@ -1,0 +1,9 @@
+#ignorar arquivos 
+*.exe
+*.o 
+*.outg
+output/
+
+#Pastas de configuração e documnetos
+.vscode/
+relatorio jogo/
