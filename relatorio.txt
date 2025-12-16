@@ -1,0 +1,20 @@
+Projeto desenvolvido pela equipe 3 da disciplina logica de programação: 
+ Fernando José, leanderson, Ana beatriz, Danilo Oliveira, Gustavo de Jesus.
+
+Este projeto consiste no desenvolvimento de um jogo de Sudoku 4x4, programado em C.
+O objetivo do jogo é preencher corretamente as posições vazias do tabuleiro, 
+utilizando valores de 1 a 4.
+
+O programa utiliza duas matrizes: uma com a forma correta do Sudoku e outra para controlar quais posições
+estão ocultas e precisam ser preenchidas pelo jogador. O jogador inicia com três vidas, que são reduzidas 
+sempre que um valor incorreto é inserido.
+
+O jogo possui um menu principal com as opções de novo jogo, carregar jogo salvo e sair.
+ O progresso do jogador é salvo automaticamente em um arquivo de texto, permitindo que 
+ o jogo seja retomado posteriormente.
+
+O jogo termina quando todas as posições são preenchidas corretamente VITORIA ou quando o jogador perde 
+todas as vidas DERROTA. O projeto demonstra o uso de matrizes, funções, estruturas de repetição e manipulação
+de arquivos, sendo essenciais no aprendizado e na prática de lógica de programação em C.
+
+16/12/2025.
