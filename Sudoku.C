@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-// FunÃ§Ã£o para salvar o progresso
+// Função para salvar o progresso
 void salvarArquivo(int matriz2[4][4], int matriz[4][4]) {
 	int i, j;
     FILE *arquivo = fopen("sudoku.txt", "w");
@@ -19,8 +19,7 @@ void salvarArquivo(int matriz2[4][4], int matriz[4][4]) {
 
     fclose(arquivo);
 }
-
-// FunÃ§Ã£o para carregar o progresso
+// Função para carregar o progresso
 void carregarArquivo(int matriz2[4][4], int matriz[4][4]) {
 	int i, j;
     FILE *arquivo = fopen("sudoku.txt", "r");
@@ -28,7 +27,6 @@ void carregarArquivo(int matriz2[4][4], int matriz[4][4]) {
         printf("Erro ao ler arquivo\n");
         return;
     } 
-
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
             if (fscanf(arquivo, "%d %d", &matriz[i][j], &matriz2[i][j]) != 2) {
@@ -38,11 +36,10 @@ void carregarArquivo(int matriz2[4][4], int matriz[4][4]) {
             }
         }
     }
-
+    
     fclose(arquivo);
 }
-
-// FunÃ§Ã£o principal do jogo
+// Função principal do jogo
 void jogar(int matriz[4][4], int matriz2[4][4]) {
 	int i, j;
     int vidas = 3;
@@ -63,7 +60,6 @@ void jogar(int matriz[4][4], int matriz2[4][4]) {
             }
             printf("\n");
         }
-
         printf("linha (0 - 3): ");
         scanf("%d", &l);
         printf("coluna (0 - 3): ");
@@ -75,7 +71,6 @@ void jogar(int matriz[4][4], int matriz2[4][4]) {
             printf("Entrada invalida\n");
             continue;
         }
-
         if (v == matriz[l][m]) {
             printf("Parabens, voce acertou!\n");
             matriz2[l][m] = 0;
@@ -85,7 +80,6 @@ void jogar(int matriz[4][4], int matriz2[4][4]) {
             vidas--;
             printf("Voce ainda tem %d vidas\n", vidas);
         }
-
         num = 0;
         for (i = 0; i < 4; i++) {
             for (j = 0; j < 4; j++) {
@@ -94,12 +88,10 @@ void jogar(int matriz[4][4], int matriz2[4][4]) {
                 }
             }
         }
-
         if (num == 0) {
             printf("Parabens, voce ganhou!\n");
             break;
         }
-
         printf("Ainda faltam %d casas\n", num);
 
     } while (vidas > 0);
@@ -108,8 +100,6 @@ void jogar(int matriz[4][4], int matriz2[4][4]) {
         printf("Voce perdeu! Fim de jogo.\n");
     }
 }
-
-
 int main() {
 	int i, j;
     int opcao;
@@ -149,18 +139,15 @@ int main() {
                 }
                 jogar(matriz, matriz2);
                 break;
-
             case 2:
                 carregarArquivo(matriz2, matriz);
                 jogar(matriz, matriz2);
                 break;
-
             case 3:
                 printf("Encerrando...\n");
                 break;
-
             default:
-                printf("OpÃ§ao invalida!\n");
+                printf("Função invalida!\n");
                 break;
         }
     } while (opcao != 3);
